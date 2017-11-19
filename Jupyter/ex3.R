@@ -60,7 +60,7 @@ preprocessing = function(adult){
 
 pre_processed = preprocessing(adult = adult)
 
-write.csv(pre_processed, 'adult.data.prepared.csv')
+write.csv(pre_processed, 'adult.data.prepared.csv', row.names = F)
 
 adult_test = read.csv("adult.test.txt", header = F, stringsAsFactors = F)
 names(adult_test) = Columnames
@@ -68,4 +68,4 @@ adult_test$class = str_replace_all(adult_test$class, '\\.', '')
 
 
 test_processed = preprocessing(adult = adult_test)
-write.csv(test_processed, "adult.test.prepared.csv")
+write.csv(test_processed, "adult.test.prepared.csv", row.names = F)
